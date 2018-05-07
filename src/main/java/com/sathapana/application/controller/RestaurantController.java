@@ -32,7 +32,7 @@ public class RestaurantController {
 
     @RequestMapping(value = "",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String,Object>> findAll(){
-        Page<Restaurant>  page = restaurantService.findAll(new PageRequest(1,100));
+        Page<Restaurant>  page = restaurantService.findAll(new PageRequest(0,100));
         map = new HashMap<>();
         map.put("data",page);
         map.put("status",200);
